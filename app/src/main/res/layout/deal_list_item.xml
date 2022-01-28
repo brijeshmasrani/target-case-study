@@ -13,7 +13,7 @@
     android:orientation="horizontal"
     >
     <ImageView
-      android:id="@+id/deal_list_item_image_view"
+      android:id="@+id/dealListItemImage"
       android:layout_width="@dimen/deal_list_item_image_size"
       android:layout_height="@dimen/deal_list_item_image_size"
       android:layout_gravity="center_vertical"
@@ -28,7 +28,7 @@
       >
 
       <TextView
-        android:id="@+id/deal_list_item_title"
+        android:id="@+id/dealListItemTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/size_smaller"
@@ -48,7 +48,7 @@
         android:orientation="horizontal"
         >
         <TextView
-          android:id="@+id/deal_list_item_price"
+          android:id="@+id/dealListItemPrice"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_weight="1"
@@ -66,7 +66,7 @@
           android:orientation="horizontal"
           >
           <TextView
-            android:id="@+id/deal_list_item_ship_label"
+            android:id="@+id/dealListItemShipLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|end"
@@ -74,7 +74,7 @@
             android:textSize="@dimen/text_size_normal"
             />
           <TextView
-            android:id="@+id/deal_list_item_aisle"
+            android:id="@+id/dealListItemAisle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_smallest"

@@ -26,10 +26,12 @@ class DealListFragment : Fragment() {
 
     val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
     recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
     val dealItemAdapter = DealItemAdapter()
     recyclerView.adapter = dealItemAdapter
 
     dealsViewModel.getAllDeals()
+
     dealsViewModel.getDealsLiveData().observe(viewLifecycleOwner,
       Observer { deals ->
         dealItemAdapter.setData(deals)
