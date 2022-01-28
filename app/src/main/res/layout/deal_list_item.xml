@@ -18,7 +18,6 @@
       android:layout_height="@dimen/deal_list_item_image_size"
       android:layout_gravity="center_vertical"
       android:layout_margin="@dimen/size_normal"
-      app:tint="@color/gray_color"
       />
 
     <LinearLayout

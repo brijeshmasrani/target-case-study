@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.request.ImageRequest
 import com.target.targetcasestudy.R
 import com.target.targetcasestudy.R.string
 import com.target.targetcasestudy.data.DealItemViewData
@@ -21,10 +19,12 @@ import java.util.Locale
 class DealItemAdapter : RecyclerView.Adapter<DealItemViewHolder>() {
 
   private var dealList: List<DealItemViewData>? = null
+  private var imageSize: Int = 0
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DealItemViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val view = inflater.inflate(R.layout.deal_list_item, parent, false)
+    imageSize = view.context.resources.getDimensionPixelSize(R.dimen.deal_list_item_image_size)
     return DealItemViewHolder(view)
   }
 
@@ -58,17 +58,11 @@ class DealItemAdapter : RecyclerView.Adapter<DealItemViewHolder>() {
 
       viewHolder.itemView.findViewById<ImageView>(R.id.deal_list_item_image_view)
         .load(item.image) {
-          (
-              listener(onSuccess = { _, _ ->
-                println("This is loaded")
-              }, onError = { request: ImageRequest, throwable: Throwable ->
-                throwable.message?.let { Log.e("DealItemAdapter", it) }
-              })
-              )
+          (crossfade(true))
+          placeholder(R.drawable.deal_list_place_holder)
+          size(imageSize)
         }
-
     }
-
   }
 }
 
