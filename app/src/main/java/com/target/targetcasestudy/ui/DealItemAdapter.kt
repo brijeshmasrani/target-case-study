@@ -23,8 +23,10 @@ class DealItemAdapter : RecyclerView.Adapter<DealItemViewHolder>() {
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DealItemViewHolder {
     val inflater = LayoutInflater.from(parent.context)
     val view = inflater.inflate(R.layout.deal_list_item, parent, false)
+
     imageSize = view.context.resources.getDimensionPixelSize(R.dimen.deal_list_item_image_size)
     binding = DealListItemBinding.inflate(inflater)
+
     return DealItemViewHolder(view)
   }
 
@@ -45,12 +47,12 @@ class DealItemAdapter : RecyclerView.Adapter<DealItemViewHolder>() {
       binding.dealListItemTitle.text = item.title
       binding.dealListItemPrice.text = item.price
 
-      val wordtoSpan: Spannable =
+      val wordToSpan: Spannable =
         SpannableString(viewHolder.itemView.context.getString(string.text_shipping_label))
       val color = viewHolder.itemView.context.resources.getColor(R.color.gray_color)
-      wordtoSpan.setSpan(ForegroundColorSpan(color), wordtoSpan.length - 3, wordtoSpan.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+      wordToSpan.setSpan(ForegroundColorSpan(color), wordToSpan.length - 3, wordToSpan.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-      binding.dealListItemShipLabel.text = wordtoSpan
+      binding.dealListItemShipLabel.text = wordToSpan
       binding.dealListItemAisle.text = item.aisle.replaceFirstChar {
         if (it.isLowerCase()) it.titlecase(
           Locale.getDefault()

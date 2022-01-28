@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/deal_list_item"
   android:layout_width="match_parent"
@@ -76,14 +75,15 @@
           <TextView
             android:id="@+id/dealListItemAisle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/size_smallest"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_tiny"
             android:background="@drawable/circle_border"
-            android:gravity="center_vertical|end"
+            android:gravity="center"
             android:padding="@dimen/size_smaller"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size_normal"
-            tools:text="B22"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="B23"
+
             />
         </LinearLayout>
       </LinearLayout>
