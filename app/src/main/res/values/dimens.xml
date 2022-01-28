@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="deal_list_item_image_size">80dp</dimen>
+  <dimen name="size_smallest">4dp</dimen>
+  <dimen name="size_smaller">8dp</dimen>
+  <dimen name="size_small">12dp</dimen>
+  <dimen name="size_normal">16dp</dimen>
+
+  <dimen name="text_size_smaller">8sp</dimen>
+  <dimen name="text_size_small">12sp</dimen>
+  <dimen name="text_size_normal">16sp</dimen>
+  <dimen name="text_size_large">20sp</dimen>
+  <dimen name="text_size_huge">36sp</dimen>
+
+  <dimen name="size_tiny">1dp</dimen>
+  <dimen name="size_mini">2dp</dimen>
+
+</resources>
