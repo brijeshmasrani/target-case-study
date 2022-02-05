@@ -1,13 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".ui.DealItemFragment">
+  android:orientation="vertical"
+  >
+
+  <ImageView
+    android:id="@+id/deal_detail_image"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_alignParentTop="true"
+    android:contentDescription="@string/deal_detail_image_description"
+    tools:src="@drawable/img"
+    />
+
+  <LinearLayout
+    android:id="@+id/deal_detail_pricing"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/deal_detail_image"
+    android:layout_marginHorizontal="@dimen/size_small"
+    android:orientation="horizontal"
+    >
+    <TextView
+      android:id="@+id/deal_detail_item_sale_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="start"
+      android:paddingVertical="@dimen/size_small"
+      android:textColor="@color/colorPrimary"
+      android:textSize="@dimen/text_size_huge"
+      android:textStyle="bold"
+      tools:text="$9.00"
+      />
+    <TextView
+      android:id="@+id/deal_detail_item_regular_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="end"
+      android:paddingVertical="@dimen/size_small"
+      android:textSize="@dimen/text_size_large"
+      tools:text="Reg: $9.00"
+      />
+  </LinearLayout>
 
   <TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/hello_blank_fragment" />
+    android:id="@+id/deal_detail_item_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/deal_detail_pricing"
+    android:layout_marginHorizontal="@dimen/size_small"
+    android:gravity="end"
+    android:textColor="@color/black"
+    android:textSize="@dimen/text_size_large"
+    tools:text="Tiered Lace Tank - Lily Star"
+    />
 
-</FrameLayout>
+  <TextView
+    android:id="@+id/deal_detail_item_detail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/deal_detail_item_name"
+    android:layout_marginHorizontal="@dimen/text_size_small"
+    android:layout_marginVertical="@dimen/text_size_smaller"
+    android:scrollbars="vertical"
+    android:textColor="@color/black"
+    android:textSize="@dimen/text_size_small"
+    tools:text="Product description goes here. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore u fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident laborum.
+"
+    />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:weightSum="2"
+    >
+    <Button
+      style="?android:attr/buttonBarButtonStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:background="@color/gray_color"
+      android:text="@string/add_to_list"
+      android:textAllCaps="false"
+      android:textColor="@color/black"
+      />
+    <Button
+      style="?android:attr/buttonBarButtonStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:background="@color/colorPrimary"
+      android:text="@string/add_to_cart"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      />
+  </LinearLayout>
+
+</RelativeLayout>

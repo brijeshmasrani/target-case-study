@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.target.targetcasestudy.R
@@ -27,14 +26,16 @@ class DealListFragment : Fragment() {
     val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
     recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-    val dealItemAdapter = DealItemAdapter()
-    recyclerView.adapter = dealItemAdapter
 
     dealsViewModel.getAllDeals()
-
     dealsViewModel.getDealsLiveData().observe(viewLifecycleOwner,
-      Observer { deals ->
-        dealItemAdapter.setData(deals)
+      { deals ->
+        recyclerView.adapter = DealItemAdapter(deals) {
+          val itemFragment = DealItemFragment(it)
+          activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(((view as ViewGroup).parent as View).id, itemFragment, "DealItemFragment")
+            ?.addToBackStack(null)?.commit()
+        }
       })
 
     return view

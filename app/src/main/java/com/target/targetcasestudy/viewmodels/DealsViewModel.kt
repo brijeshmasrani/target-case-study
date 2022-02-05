@@ -29,11 +29,9 @@ class DealsViewModel @Inject constructor(val dealsRepository: DealsRepository) :
             DealItemViewData(
               id = product.id,
               title = product.title,
-              price = (if (product.salePrice != null) {
-                product.salePrice.displayString
-              } else {
-                product.regularPrice.displayString
-              }),
+              description = product.description,
+              salePrice = product.salePrice?.displayString,
+              regularPrice = product.regularPrice.displayString,
               aisle = product.aisle,
               image = product.imageUrl
             )
